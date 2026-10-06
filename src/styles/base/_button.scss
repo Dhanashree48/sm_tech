@@ -1,0 +1,72 @@
+@use '../tokens' as *;
+
+
+.btn-default {
+  margin: 0rem;
+  margin-right: 2rem;
+  padding: 1.6rem 1.2rem;
+  border-radius: 2.5rem;
+  font-family: $font-bold;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  background-color: $clr-root;
+  color: $clr-primary;
+  border: 1px solid $clr-root;
+  transition: all 0.5s ease-in-out;
+  text-transform: capitalize;
+  text-align: center;
+  min-width: 19.8rem;
+  display: inline-block;
+
+  &:hover {
+    background-color: $clr-primary;
+    color: $clr-root;
+  }
+
+  &:disabled,
+  &.btn-disable {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover {
+      background-color: $clr-primary;
+      color: $clr-root;
+      border: 1px solid $clr-primary;
+    }
+  }
+  &.btn-default-disable {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    &:hover {
+      background-color: $clr-root;
+      color: $clr-primary;
+      border: 1px solid $clr-primary;
+    }
+  }
+}
+
+.btn-link {
+  margin: 0rem;
+  font-family: $font-bold;
+  font-size: 1.2rem;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $clr-primary;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  &.typ-global-series-text {
+    color: $clr-root;
+  }
+  &.typ-global-series {
+    color: $clr-base;
+  }
+  &.btn-link-hide {
+    display: none;
+  }
+  &.typ-adv {
+    color: #924210;
+  }
+}

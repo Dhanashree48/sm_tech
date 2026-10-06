@@ -1,0 +1,7 @@
+@use "../tokens" as *;
+
+.bs-swiper {
+  .swiper-pagination {
+    z-index: 6 !important;
+  }
+}

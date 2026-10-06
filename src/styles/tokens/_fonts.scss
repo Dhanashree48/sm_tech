@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'PlusJakartaSans-SemiBold';
+    src: url('/assets/font/PlusJakartaSans-SemiBold.eot');
+    src: url('/assets/font/PlusJakartaSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/PlusJakartaSans-SemiBold.woff2') format('woff2'),
+        url('/assets/font/PlusJakartaSans-SemiBold.woff') format('woff'),
+        url('/assets/font/PlusJakartaSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans-Regular';
+    src: url('/assets/font/PlusJakartaSans-Regular.eot');
+    src: url('/assets/font/PlusJakartaSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/PlusJakartaSans-Regular.woff2') format('woff2'),
+        url('/assets/font/PlusJakartaSans-Regular.woff') format('woff'),
+        url('/assets/font/PlusJakartaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans-Bold';
+    src: url('/assets/font/PlusJakartaSans-Bold.eot');
+    src: url('/assets/font/PlusJakartaSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/PlusJakartaSans-Bold.woff2') format('woff2'),
+        url('/assets/font/PlusJakartaSans-Bold.woff') format('woff'),
+        url('/assets/font/PlusJakartaSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans-Medium';
+    src: url('/assets/font/PlusJakartaSans-Medium.eot');
+    src: url('/assets/font/PlusJakartaSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/PlusJakartaSans-Medium.woff2') format('woff2'),
+        url('/assets/font/PlusJakartaSans-Medium.woff') format('woff'),
+        url('/assets/font/PlusJakartaSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans-Light';
+    src: url('/assets/font/PlusJakartaSans-Light.eot');
+    src: url('/assets/font/PlusJakartaSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/PlusJakartaSans-Light.woff2') format('woff2'),
+        url('/assets/font/PlusJakartaSans-Light.woff') format('woff'),
+        url('/assets/font/PlusJakartaSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
