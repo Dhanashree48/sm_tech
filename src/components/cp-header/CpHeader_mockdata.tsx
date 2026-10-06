@@ -14,11 +14,11 @@ export const headerMenu = [
     label: 'Portfolio',
     href: '#portfolio',
   },
-  {
-    id: 4,
-    label: 'Photo Gallery',
-    href: '#gallery',
-  },
+  // {
+  //   id: 4,
+  //   label: 'Photo Gallery',
+  //   href: '#gallery',
+  // },
   {
     id: 5,
     label: 'Contact Us',

@@ -3,34 +3,26 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { headerMenu } from './CpHeader_mockdata';
-
+import Image from 'next/image';
 export default function CpHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className={'header'}>
-      <div className={'container'}>
-
-        {/* Logo */}
+    <div className={'cp-header'}>
         <Link href="/" className={'logo'}>
-          <span>MY</span>
-          <strong>COMPANY</strong>
+          <Image src="/assets/images/logo.png" alt="Logo" width={178} height={30} />
         </Link>
-
-        {/* Desktop Navigation */}
-        <nav className={'navigation'}>
-          <ul>
+        <div   className={'navigation'}>
+          <ul className={'nav-list'}>
             {headerMenu.map((item) => (
-              <li key={item.id}>
-                <Link href={item.href}>
+              <li className={'nav-item'} key={item.id}>
+                <Link className={'nav-link'} href={item.href}>
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </nav>
-
-      </div>
-    </header>
+        </div>
+    </div>
   );
 }
