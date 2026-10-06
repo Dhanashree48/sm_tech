@@ -12,16 +12,34 @@
       font-family: $font-light;
       font-size: 1.4rem;
       line-height: 1.6rem;
-      margin-bottom: 1.2rem;
-      border: 1px soild #0054A5;
+      margin-bottom: 2rem;
+      border: 1px solid #0054A5;
       color: $clr-primary;
+      letter-spacing: 6%;
+      padding: .85rem 2.3rem;
+      display: inline-block;
+      border-radius:1.8rem;
+      text-transform: uppercase;
     }
     .sec-title{
-
+      font-size: 4.8rem;
+      line-height: 6.4rem;
+      color: $clr-title;
+      font-family: $font-regular;
+      margin-bottom: 1.6rem;
+      @media only screen and (max-width: $media-mobile) {
+        font-size: 3.2rem;
+        line-height: 4.2rem;
+        color: $clr-primary;
+      }
+      
+      .sec-titleBold{
+        font-family: $font-bold;
+        font-weight: 700;
+      }
     }
-    .sec-titleBold{
-
-    }
+    
+    
     .sec-desc{
 
     }
