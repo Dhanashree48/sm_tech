@@ -7,7 +7,6 @@ $clr-secondary: #2c2e3f;
 $clr-txt-clr: #1E1F23;
 
 /*font family*/
-// PlusJakartaSans
 $font-light: 'PlusJakartaSans-Light'; //300
 $font-regular: 'PlusJakartaSans-Regular'; //400
 $font-medium: 'PlusJakartaSans-Medium'; //500
@@ -15,13 +14,5 @@ $font-bold: 'PlusJakartaSans-Bold'; //700
 $font-semiBold: 'PlusJakartaSans-SemiBold'; //600
 
 /* breakpoints */
-
-// $media-xs: 576px;
-// $media-sm: 768px;
-// $media-sm-min: 767px;
-// $media-tab: 992px;
-// $media-md-min: 993px;
-// $media-md: 1024px;
 $media-mobile: 1023px;
-// $media-lg: 1366px;
 $media-xl: 1600px;

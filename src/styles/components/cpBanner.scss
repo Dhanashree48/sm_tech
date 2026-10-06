@@ -1,8 +1,41 @@
-@use '../tokens/config' as *;
-@use '../tokens/variables' as *;
+@use "../tokens/config" as *;
+@use "../tokens/variables" as *;
 
-.cp-banner{
-    height: 32rem;
-    margin-top: 8rem;
-    padding: 5rem 0;
+.cp-banner {
+  height: 64rem;
+  margin-top: 8rem;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .banner-wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .banner-wrap {
+    .banner-title {
+      font-size: 6.4rem;
+      line-height: 8.4rem;
+      color: $clr-root;
+      font-family: $font-regular;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+      .bold {
+        font-family: $font-bold;
+        font-weight: 700;
+        width: 100%;
+      }
+    }
+    .banner-desc{
+        width: 47%;
+        font-size: 2rem;
+        line-height: 3.2rem;
+        color: $clr-root;
+        margin-bottom: 6.4rem;
+        font-family: $font-bold;
+        font-weight: 700;
+    }
+  }
 }

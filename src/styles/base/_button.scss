@@ -4,11 +4,13 @@
 .btn-default {
   margin: 0rem;
   margin-right: 2rem;
-  padding: 1.6rem 1.2rem;
-  border-radius: 2.5rem;
+  padding: 2.4rem 1.2rem;
+  border-radius: 6.4rem;
   font-family: $font-bold;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.7px;
   background-color: $clr-root;
   color: $clr-primary;
   border: 1px solid $clr-root;
@@ -42,6 +44,17 @@
       background-color: $clr-root;
       color: $clr-primary;
       border: 1px solid $clr-primary;
+    }
+  }
+  &.btn-primary{
+    background-color: $clr-primary;
+    color: $clr-root;
+    border: 1px solid $clr-primary;
+
+    &:hover {
+      background-color: $clr-root;
+      color: $clr-primary;
+      border: 1px solid $clr-root;
     }
   }
 }
