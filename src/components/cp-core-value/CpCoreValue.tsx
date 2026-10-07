@@ -19,31 +19,20 @@ const CpCoreValue = ({ data }: CpCoreValueProps) => {
     >
       <div className="container">
 
-        <div className="list">
+        <ul className="core-list">
           {data.map((value) => (
-            <div
-              className="item"
+            <li
+              className="core-item"
               key={value.id}
             >
-              <span className="number">
-                {value.id}
-              </span>
-
-              <div className="icon">
-                <Image
-                  src={value.icon}
-                  alt={value.title}
-                  width={50}
-                  height={50}
-                />
+              <div className="core-card">
+                <span className={`icon ${value.icon}`}></span>
+                <h3 className="core-title">{value.title}</h3>
+                <p className="core-desc">{value.description}</p>
               </div>
-
-              <h3>{value.title}</h3>
-
-              <p>{value.description}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
       </div>
     </section>

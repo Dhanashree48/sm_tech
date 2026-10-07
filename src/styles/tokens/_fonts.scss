@@ -84,45 +84,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-check:before {
+  content: "\e908";
+}
+.icon-arrow:before {
+  content: "\e90d";
+}
 .icon-twitter:before {
   content: "\e900";
 }
-.icon-Safety-first:before {
+.icon-safety-first:before {
   content: "\e901";
 }
-.icon-Phone:before {
+.icon-phone:before {
   content: "\e902";
 }
-.icon-Our-Vision:before {
+.icon-vision:before {
   content: "\e903";
 }
-.icon-Our-Mission:before {
+.icon-mission:before {
   content: "\e904";
 }
-.icon-Oil--Gas-Projects:before {
+.icon-oil-gas-projects:before {
   content: "\e905";
 }
-.icon-Linked-In:before {
+.icon-linked-In:before {
   content: "\e906";
 }
-.icon-Integrity:before {
+.icon-integrity:before {
   content: "\e907";
 }
-.icon-Facebook:before {
+.icon-facebook:before {
   content: "\e909";
 }
-.icon-Excellence:before {
+.icon-excellence:before {
   content: "\e90a";
 }
-.icon-Equipment-Recertification:before {
+.icon-recertification:before {
   content: "\e90b";
 }
-.icon-E-Mail:before {
+.icon-e-mail:before {
   content: "\e90c";
 }
-.icon-Category-IV-Inspections:before {
+.icon-category:before {
   content: "\e90e";
 }
-.icon-Address:before {
+.icon-address:before {
   content: "\e90f";
 }

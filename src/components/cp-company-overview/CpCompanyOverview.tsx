@@ -28,11 +28,11 @@ const CpCompanyOverview = () => {
         </div>
 
         {/* Vision & Mission */}
-        <div className="grid">
+        <div className="overview-card-grid">
 
-          <div className="card">
-            <span className="number">
-              01
+          <div className="overview-card">
+            <span className={`icon ${companyOverviewData.vision.icon}`}>
+             
             </span>
 
             <h3>
@@ -44,10 +44,8 @@ const CpCompanyOverview = () => {
             </p>
           </div>
 
-          <div className="card">
-            <span className="number">
-              02
-            </span>
+          <div className="overview-card-card">
+            <span className={`icon ${companyOverviewData.mission.icon}`}></span>
 
             <h3>
               {companyOverviewData.mission.title}
@@ -59,7 +57,6 @@ const CpCompanyOverview = () => {
           </div>
 
         </div>
-
       </div>
     </section>
   );

@@ -17,7 +17,10 @@
       width: 4rem;
       height: 4rem;
       display: block;
-      background: #000000;
+      // background: #000000;
+      color: $clr-primary;
+      font-size: 4rem;
+      line-height: 4rem;
       margin-bottom:3rem;
     }
     .service-number {
