@@ -78,6 +78,7 @@ export default function HomePageClient() {
       />
       <BsSec
         showHead={false}
+        secTypeClass={'typ-get-in-touch'}
         secCont={
           <CpGetInTouch />
         }

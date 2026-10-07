@@ -8,6 +8,7 @@ type FormValues = {
   email: string;
   phone: string;
   company: string;
+  message: string;
 };
 
 type FormErrors = {
@@ -22,6 +23,7 @@ const CpGetInTouch = () => {
     email: "",
     phone: "",
     company: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({
@@ -31,7 +33,7 @@ const CpGetInTouch = () => {
   });
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = event.target;
 
@@ -40,7 +42,6 @@ const CpGetInTouch = () => {
       [name]: value,
     }));
 
-    // Clear field error while user is correcting it
     setErrors((prev) => ({
       ...prev,
       [name]: "",
@@ -54,30 +55,21 @@ const CpGetInTouch = () => {
       phone: "",
     };
 
-    // Name validation
-    const nameRegex = /^[A-Za-z]+[A-Za-z ]*$/;
-
     if (!formValues.name.trim()) {
       newErrors.name = "Name is required";
-    } else if (!nameRegex.test(formValues.name.trim())) {
-      newErrors.name = "Please enter valid Name";
     }
-
-    // Email validation
-    const emailRegex = /^[0-9\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (!formValues.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!emailRegex.test(formValues.email.trim())) {
+    } else if (
+      !/^[0-9\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formValues.email.trim())
+    ) {
       newErrors.email = "Please enter valid Email Id";
     }
 
-    // Mobile validation
-    const mobileRegex = /^[5-9]\d{9}$/;
-
     if (!formValues.phone.trim()) {
       newErrors.phone = "Mobile is required";
-    } else if (!mobileRegex.test(formValues.phone.trim())) {
+    } else if (!/^[5-9]\d{9}$/.test(formValues.phone.trim())) {
       newErrors.phone = "Please enter valid Mobile Number";
     }
 
@@ -86,104 +78,173 @@ const CpGetInTouch = () => {
     return !newErrors.name && !newErrors.email && !newErrors.phone;
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
 
-    const isValid = validateForm();
-
-    if (!isValid) {
+    if (!validateForm()) {
       return;
     }
 
-    // API submission can be added here
-    console.log("Form submitted:", formValues);
+    try {
+      const response = await fetch("/api/get-in-touch", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send email");
+      }
+
+      alert("Thank you! Your details have been submitted.");
+
+      setFormValues({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+
+      setErrors({
+        name: "",
+        email: "",
+        phone: "",
+      });
+    } catch (error) {
+      console.error("Submit error:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
-    <section className="cp-get-in-touch" id="CpGetInTouch">
-      <div className="cp-get-in-touch__container">
-        <div className="cp-get-in-touch__content">
-          <div className="cp-get-in-touch__tag">
-            {getInTouchData.tag}
-          </div>
-
-          <h2 className="cp-get-in-touch__title">
-            {getInTouchData.title}{" "}
-            <strong>{getInTouchData.titleBold}</strong>
+    <section className="cp-get-in-touch" id="CpGetInTouch"  >
+      <div className="container">
+        <div
+          className={`sec-head`}
+        >
+          {getInTouchData.tag && <span className={"sec-tag"}>{getInTouchData.tag}</span>}
+          {getInTouchData.title && <h2 className={"sec-title"}>
+            {getInTouchData.title} <span className={"sec-titleBold"}>{getInTouchData.secTitleBoldTxt}</span>
           </h2>
-
-          <p className="cp-get-in-touch__description">
-            {getInTouchData.description}
-          </p>
-
+          }
+          {getInTouchData.description && <p className="sec-desc">{getInTouchData.description}</p>}
+        </div>
+        <div className={`sec-cont`}>
           <form
-            className="cp-get-in-touch__form"
+            className="form"
             onSubmit={handleSubmit}
             noValidate
           >
-            {getInTouchData.form.fields.map((field) => {
-              const error =
-                field.id === "name"
-                  ? errors.name
-                  : field.id === "email"
-                    ? errors.email
-                    : field.id === "phone"
-                      ? errors.phone
-                      : "";
 
-              return (
-                <div
-                  className="cp-get-in-touch__field-wrapper"
-                  key={field.id}
-                >
-                  <div
-                    className={`cp-get-in-touch__field ${error
-                        ? "cp-get-in-touch__field--error"
-                        : ""
-                      }`}
-                  >
-                    <input
-                      type={field.type}
-                      id={field.id}
-                      name={field.name}
-                      placeholder={field.placeholder}
-                      value={
-                        formValues[
-                        field.name as keyof FormValues
-                        ]
-                      }
-                      onChange={handleChange}
-                    />
+            {/* Name */}
+            <div className="field-wrapper">
+              <div className={`field ${errors.name ? "field--error" : ""} `}>
+                <input
+                  type="text" className="input-field"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                />
+              </div>
 
-                    <label htmlFor={field.id}>
-                      {field.label}
-                    </label>
-                  </div>
+              {errors.name && (
+                <span className="error">
+                  {errors.name}
+                </span>
+              )}
+            </div>
 
-                  {error && (
-                    <span className="cp-get-in-touch__error">
-                      {error}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
+            {/* Email */}
+            <div className="field-wrapper">
+              <div className={`field ${errors.email ? "field--error" : ""} `}>
+                <input className="input-field"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Id"
+                  value={formValues.email}
+                  onChange={handleChange}
+                />
+              </div>
 
+              {errors.email && (
+                <span className="error">
+                  {errors.email}
+                </span>
+              )}
+            </div>
+
+            {/* Phone */}
+            <div className="field-wrapper">
+              <div className={`field ${errors.phone ? "field--error" : ""} `}>
+                <input className="input-field"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone"
+                  value={formValues.phone}
+                  onChange={handleChange}
+                />
+              </div>
+
+              {errors.phone && (
+                <span className="error">
+                  {errors.phone}
+                </span>
+              )}
+            </div>
+
+            {/* Company */}
+            <div className="field-wrapper">
+              <div className="field">
+                <input
+                  type="text" className="input-field"
+                  id="company"
+                  name="company"
+                  placeholder="Company Name"
+                  value={formValues.company}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {/* Message */}
+            <div className="field-wrapper typ-full-width">
+              <div className="field">
+                <textarea className="input-field" 
+                  id="message" rows="4" cols="50"
+                  name="message"
+                  placeholder="Your Message"
+                  value={formValues.message}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {/* Submit */}
             <button
               type="submit"
-              className="cp-get-in-touch__button"
+              className="btn-default"
             >
-              <span>{getInTouchData.form.button.text}</span>
+              <span>Send Message</span>
 
               <span
-                className="cp-get-in-touch__arrow"
+                className="arrow"
                 aria-hidden="true"
               >
-                {getInTouchData.form.button.arrow}
+                →
               </span>
             </button>
+
           </form>
         </div>
       </div>
