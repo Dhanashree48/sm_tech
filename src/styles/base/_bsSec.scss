@@ -43,18 +43,19 @@
       line-height: 3rem;
       color: $clr-desc;
       width: 35%;
-    margin: 0px auto 2.4rem;
-    .sec-desc{
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      color: $clr-desc;
-      font-family: $font-light;
-      width: 30%;
-      margin: 0px auto;
-      @media only screen and (max-width: $media-mobile) {
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        color: $clr-primary;
+      margin: 0px auto 2.4rem;
+      .sec-desc {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $clr-desc;
+        font-family: $font-light;
+        width: 30%;
+        margin: 0px auto;
+        @media only screen and (max-width: $media-mobile) {
+          font-size: 1.4rem;
+          line-height: 2.2rem;
+          color: $clr-primary;
+        }
       }
     }
   }
@@ -83,5 +84,4 @@
       }
     }
   }
-}
 }

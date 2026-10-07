@@ -4,7 +4,7 @@
 .btn-default {
   margin: 0rem;
   margin-right: 2rem;
-  padding: 2.4rem 1.2rem;
+  padding: 1.7rem 1.2rem;
   border-radius: 6.4rem;
   font-family: $font-bold;
   font-weight: 500;
@@ -19,7 +19,9 @@
   text-align: center;
   min-width: 19.8rem;
   display: inline-block;
-
+  .arrow{
+    margin-left: 0.5rem;
+  }
   &:hover {
     background-color: $clr-primary;
     color: $clr-root;
