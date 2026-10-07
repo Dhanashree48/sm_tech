@@ -31,10 +31,11 @@ const CpServices = ({ data, button }: CpServicesProps) => {
               </span>
 
               <div className="service-content">
-                <h3>{service.title}</h3>
-
-                <p>{service.description}</p>
+                <span className="icon"></span>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-desc">{service.description}</p>
               </div>
+              <span className="card-zigzag"></span>
             </article>
           ))}
         </div>

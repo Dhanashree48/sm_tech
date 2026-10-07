@@ -1,6 +1,72 @@
 @use "../tokens/config" as *;
 @use "../tokens/variables" as *;
 
-.cp-services{
+.cp-services {
+  .services-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.6rem;
+  }
+  .service-card {
+    background: linear-gradient(180deg, #d2ddf1 0%, #e8edf7 100%);
+    min-height: 35.2rem;
+    max-width: 29.8rem;
+    padding: 2.6rem;
+    position: relative;
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      display: block;
+      background: #000000;
+      margin-bottom:3rem;
+    }
+    .service-number {
+      position: absolute;
+      top: 4px;
+      right: 12px;
+      font-size: 90px;
+      line-height: 1;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.24);
+      letter-spacing: -5px;
+      font-family: $font-bold;
+      font-weight: 700;
+    }
+    .service-title {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        color: $clr-title;
+        font-family: $font-regular;
+        margin-bottom: 1.6rem;
+        font-family: $font-bold;
+        font-weight: 700;
+        width:52%;
+    }
+    .service-desc{
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $clr-desc;
+        font-family: $font-light;
+        font-weight: 300;
+    }
+    .card-zigzag {
+      position: absolute;
+      left: -2px;
+      bottom: -1px;
+      width: calc(100% + 4px);
+      height: 25px;
+      background: #fff;
+      clip-path: polygon(
+        0 100%,
+        0 75%,
+        25% 20%,
+        50% 75%,
+        75% 20%,
+        100% 75%,
+        100% 100%
+      );
 
+      z-index: 3;
+    }
+  }
 }
