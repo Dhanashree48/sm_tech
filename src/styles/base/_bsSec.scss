@@ -32,16 +32,23 @@
         line-height: 4.2rem;
         color: $clr-primary;
       }
-      
       .sec-titleBold{
         font-family: $font-bold;
         font-weight: 700;
       }
     }
-    
-    
     .sec-desc{
-
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: $clr-desc;
+      font-family: $font-light;
+      width: 30%;
+      margin: 0px auto;
+      @media only screen and (max-width: $media-mobile) {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: $clr-primary;
+      }
     }
   }
 }
