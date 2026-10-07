@@ -57,3 +57,72 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/assets/font/icomoon.eot?4ydscg');
+  src:  url('/assets/font/icomoon.eot?4ydscg#iefix') format('embedded-opentype'),
+    url('/assets/font/icomoon.ttf?4ydscg') format('truetype'),
+    url('/assets/font/icomoon.woff?4ydscg') format('woff'),
+    url('/assets/font/icomoon.svg?4ydscg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: "\e900";
+}
+.icon-Safety-first:before {
+  content: "\e901";
+}
+.icon-Phone:before {
+  content: "\e902";
+}
+.icon-Our-Vision:before {
+  content: "\e903";
+}
+.icon-Our-Mission:before {
+  content: "\e904";
+}
+.icon-Oil--Gas-Projects:before {
+  content: "\e905";
+}
+.icon-Linked-In:before {
+  content: "\e906";
+}
+.icon-Integrity:before {
+  content: "\e907";
+}
+.icon-Facebook:before {
+  content: "\e909";
+}
+.icon-Excellence:before {
+  content: "\e90a";
+}
+.icon-Equipment-Recertification:before {
+  content: "\e90b";
+}
+.icon-E-Mail:before {
+  content: "\e90c";
+}
+.icon-Category-IV-Inspections:before {
+  content: "\e90e";
+}
+.icon-Address:before {
+  content: "\e90f";
+}
